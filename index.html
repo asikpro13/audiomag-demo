@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>АудиоМаг — главная (демо на согласование)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f3f5f8;font-family:'Golos Text',system-ui,sans-serif;color:#111827}
+a{color:#1d4ed8;text-decoration:none}a:hover{color:#1e40af}
+input::placeholder{color:#6b7280}
+.wrap{max-width:1280px;margin:0 auto;padding-left:32px;padding-right:32px}
+.side{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-radius:10px;color:#111827;font-size:15px}
+.side:hover{background:#f3f5f8;color:#111827}
+.ico{width:36px;height:36px;border-radius:10px;border:0;background:#fff;color:#4b5563;display:grid;place-items:center;cursor:pointer}
+.btn{height:44px;border:0;border-radius:10px;background:#1d4ed8;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.btn2{height:44px;padding:0 12px;border:1px solid #d1d5db;border-radius:10px;background:#fff;color:#111827;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.tab{height:40px;padding:0 18px;border-radius:100px;border:1px solid #d1d5db;background:#fff;color:#111827;font:inherit;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:#111827;color:#fff;border-color:#111827}
+.h2{margin:0;font-size:30px;font-weight:800}
+#modal{position:fixed;inset:0;z-index:50;background:rgba(17,24,39,.6);display:none;place-items:center;padding:20px}
+#modal.open{display:grid}
+.demo{background:#fef3c7;color:#78350f;font-size:13px;text-align:center;padding:8px 16px}
+@media (max-width:640px){.wrap{padding-left:16px;padding-right:16px}.h2{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-версия главной страницы для согласования дизайна. Товары, цены и тексты в [скобках] — заглушки.</div>
+
+<div style="background: #fff; border-bottom: 1px solid #e5e7eb; font-size: 14px; color: #4b5563">
+  <div class="wrap" style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 20px"><span>Сургут, наб. Ивана Кайдалова, 28</span><span>Вт–Сб 10:00–20:00 · Вс 11:00–18:00 · Пн выходной</span></div>
+    <nav aria-label="Информация" style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+      <a href="#" style="color: #4b5563">Доставка и оплата</a><a href="#" style="color: #4b5563">Гарантия</a><a href="#" style="color: #4b5563">Услуги</a>
+      <button type="button" data-open style="border: 0; background: none; padding: 0; font: inherit; color: #1d4ed8; font-weight: 600; cursor: pointer">Запись на установку</button>
+      <a href="#" style="color: #4b5563">О салоне</a><a href="#" style="color: #4b5563">Контакты</a>
+    </nav>
+  </div>
+</div>
+
+<header style="background: #fff; border-bottom: 1px solid #e5e7eb">
+  <div class="wrap" style="padding-top: 18px; padding-bottom: 18px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center">
+    <a href="#" aria-label="АудиоМаг — на главную"><img src="logo-light.svg" alt="АудиоМаг — салон автозвука" style="height: 64px; width: auto; display: block"></a>
+    <button type="button" style="height: 50px; padding: 0 20px; border: 0; border-radius: 12px; background: #1d4ed8; color: #fff; font: inherit; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Каталог</button>
+    <form role="search" onsubmit="return false" style="flex: 1 1 340px; display: flex; min-width: 0; border: 2px solid #1d4ed8; border-radius: 12px; overflow: hidden">
+      <label for="q" style="position: absolute; left: -9999px">Поиск по каталогу</label>
+      <input id="q" type="search" placeholder="Поиск: название, артикул или бренд" style="flex: 1; min-width: 0; height: 46px; padding: 0 16px; border: 0; font: inherit; font-size: 15px; color: #111827">
+      <button type="submit" style="padding: 0 22px; border: 0; background: #1d4ed8; color: #fff; font: inherit; font-weight: 700; cursor: pointer">Найти</button>
+    </form>
+    <div style="display: flex; flex-direction: column; line-height: 1.3"><a href="tel:+73462211408" style="color: #111827; font-weight: 800; font-size: 18px">+7 (3462) 21-14-08</a><a href="#" style="font-size: 13px">Заказать звонок</a></div>
+    <nav aria-label="Покупки" style="display: flex; gap: 18px; font-size: 13px">
+      <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #4b5563; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>Избранное</a>
+      <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #4b5563; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg>Сравнить</a>
+      <a href="#" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #4b5563; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Корзина<span style="position: absolute; top: -6px; right: 2px; min-width: 20px; height: 20px; border-radius: 10px; background: #dc2626; color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center">2</span></a>
+    </nav>
+  </div>
+  <nav aria-label="Разделы" class="wrap" style="padding-bottom: 14px; display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 600; font-size: 15px; align-items: center">
+    <a href="#" style="display: inline-flex; align-items: center; gap: 6px; height: 32px; margin: -4px 0; padding: 0 14px; border-radius: 8px; background: #dc2626; color: #fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>Акции</a>
+    <a href="#" style="color: #111827">Магнитолы</a><a href="#" style="color: #111827">Акустика</a><a href="#" style="color: #111827">Сабвуферы</a><a href="#" style="color: #111827">Усилители</a><a href="#" style="color: #111827">Процессоры</a><a href="#" style="color: #111827">Шумоизоляция</a><a href="#" style="color: #111827">Автосвет</a><a href="#" style="color: #111827">Камеры</a><a href="#" style="color: #111827">Монтаж</a>
+    <a href="#" style="color: #dc2626">Акционный товар</a>
+  </nav>
+</header>
+
+<section class="wrap" style="padding-top: 24px; padding-bottom: 24px; display: flex; flex-wrap: wrap; gap: 20px">
+  <nav aria-label="Каталог" style="flex: 1 1 260px; max-width: 300px; background: #fff; border-radius: 16px; padding: 10px; display: flex; flex-direction: column">
+    <a href="#" class="side" style="color: #fff; font-weight: 700; background: #dc2626">Акции и промокоды<span aria-hidden="true">›</span></a>
+    <a href="#" class="side">Головные устройства<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Компонентная акустика<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Коаксиальная акустика<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Сабвуферы<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Усилители<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Процессоры и эквалайзеры<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Шумоизоляция<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Автосвет<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Адаптеры, переходники, рамки<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Камеры, парктроники<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Видеорегистраторы<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Кабели<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Монтажные аксессуары<span style="color: #9ca3af" aria-hidden="true">›</span></a><a href="#" class="side">Подиумы, полки, корпуса<span style="color: #9ca3af" aria-hidden="true">›</span></a>
+    <a href="#" class="side" style="color: #dc2626; font-weight: 700; background: #fef2f2">Акционный товар<span aria-hidden="true">›</span></a>
+  </nav>
+  <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+    <div style="position: relative; border-radius: 20px; background: #1d4ed8; color: #fff; padding: clamp(28px, 4vw, 48px); min-height: 320px; display: flex; flex-direction: column; justify-content: center; gap: 18px; overflow: hidden">
+      <div style="position: absolute; right: -60px; top: -60px; width: 380px; height: 380px; border-radius: 50%; border: 50px solid rgba(255,255,255,.08)"></div>
+      <div style="position: absolute; right: 60px; bottom: -90px; width: 240px; height: 240px; border-radius: 50%; background: rgba(255,255,255,.08)"></div>
+      <span style="position: relative; align-self: flex-start; background: #ffd23f; color: #111827; font-weight: 800; font-size: 13px; padding: 6px 12px; border-radius: 8px">Более 17 лет в автозвуке</span>
+      <h1 style="position: relative; margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.08; font-weight: 800; max-width: 640px">Автозвук в Сургуте с подбором под ваш автомобиль</h1>
+      <p style="position: relative; margin: 0; font-size: 18px; line-height: 1.5; max-width: 560px; color: #dbe5ff">Магнитолы, акустика, сабвуферы, усилители и шумоизоляция. Наличие на сайте обновляется со склада салона.</p>
+      <div style="position: relative; display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#" style="height: 52px; padding: 0 26px; display: inline-flex; align-items: center; border-radius: 12px; background: #fff; color: #111827; font-weight: 800">Смотреть каталог</a>
+        <a href="#podbor" style="height: 52px; padding: 0 26px; display: inline-flex; align-items: center; border-radius: 12px; border: 2px solid rgba(255,255,255,.55); color: #fff; font-weight: 700">Подобрать комплект</a>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px"><div style="background: #fff; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">Наличие онлайн</b><span style="font-size: 14px; color: #4b5563; line-height: 1.45">остатки со склада салона</span></div><div style="background: #fff; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">Доставка по России</b><span style="font-size: 14px; color: #4b5563; line-height: 1.45">СДЭК до двери или пункта выдачи</span></div><div style="background: #fff; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">Установка в салоне</b><span style="font-size: 14px; color: #4b5563; line-height: 1.45">собственный установочный центр</span></div><div style="background: #fff; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 16px">Консультация</b><span style="font-size: 14px; color: #4b5563; line-height: 1.45">подбор под авто и бюджет</span></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+  <div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 20px"><h2 class="h2">Популярные разделы</h2><a href="#" style="font-weight: 600">Весь каталог →</a></div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr)); gap: 12px"><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Магнитолы 2DIN</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Магнитолы 1DIN</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Акустика 16 см</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Акустика 13 см</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Сабвуферы</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Усилители</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Процессоры</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Вибропоглотители</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">LED-лампы</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Переходные рамки</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Камеры заднего вида</b></a><a href="#" style="background: #fff; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #111827"><div style="height: 110px; border-radius: 12px; background: #eef2fb; display: grid; place-items: center; color: #6b7280; font-size: 13px">Фото раздела</div><b style="font-size: 15px; line-height: 1.3">Кабели и провода</b></a></div>
+</section>
+
+<section class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+  <div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-bottom: 20px">
+    <h2 class="h2" style="margin-right: 8px">В наличии в салоне</h2>
+    <div role="tablist" aria-label="Подборки" style="display: flex; flex-wrap: wrap; gap: 8px">
+      <button type="button" role="tab" class="tab" aria-selected="true">Хиты</button><button type="button" role="tab" class="tab" aria-selected="false">Новинки</button><button type="button" role="tab" class="tab" aria-selected="false">Со скидкой</button>
+    </div>
+    <a href="#" style="font-weight: 600; margin-left: auto">Все товары →</a>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 16px"><article style="background: #fff; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 210px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 14px">Фото товара
+<span style="position: absolute; left: 10px; top: 10px; background: #ffd23f; color: #111827; font-size: 12px; font-weight: 800; padding: 4px 9px; border-radius: 6px">Хит</span>
+<span style="position: absolute; right: 8px; top: 8px; display: flex; gap: 4px"><button type="button" aria-label="В избранное" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></button><button type="button" aria-label="К сравнению" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></button></span></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6b7280"><span>Арт. 10652</span><span style="color: #15803d; font-weight: 600">В наличии</span></div>
+<a href="#" style="color: #111827; font-weight: 600; font-size: 15px; line-height: 1.4; min-height: 63px">АвтоОпт Светодиодные линзы H11 35W 6000K (K10-H11)</a>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 24px; font-weight: 800">3 390 ₽</span><s style="font-size: 15px; color: #6b7280"></s></div>
+<div style="display: flex; gap: 8px"><button type="button" class="btn" style="flex: 1">В корзину</button><button type="button" class="btn2">В 1 клик</button></div>
+</article><article style="background: #fff; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 210px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 14px">Фото товара
+<span style="position: absolute; left: 10px; top: 10px; background: #ffd23f; color: #111827; font-size: 12px; font-weight: 800; padding: 4px 9px; border-radius: 6px">Хит</span>
+<span style="position: absolute; right: 8px; top: 8px; display: flex; gap: 4px"><button type="button" aria-label="В избранное" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></button><button type="button" aria-label="К сравнению" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></button></span></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6b7280"><span>Арт. 10651</span><span style="color: #15803d; font-weight: 600">В наличии</span></div>
+<a href="#" style="color: #111827; font-weight: 600; font-size: 15px; line-height: 1.4; min-height: 63px">АвтоОпт Фара светодиодная 10-30V (160×47×50 мм)</a>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 24px; font-weight: 800">790 ₽</span><s style="font-size: 15px; color: #6b7280"></s></div>
+<div style="display: flex; gap: 8px"><button type="button" class="btn" style="flex: 1">В корзину</button><button type="button" class="btn2">В 1 клик</button></div>
+</article><article style="background: #fff; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 210px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 14px">Фото товара
+<span style="position: absolute; left: 10px; top: 10px; background: #dc2626; color: #ffffff; font-size: 12px; font-weight: 800; padding: 4px 9px; border-radius: 6px">Акция</span>
+<span style="position: absolute; right: 8px; top: 8px; display: flex; gap: 4px"><button type="button" aria-label="В избранное" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></button><button type="button" aria-label="К сравнению" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></button></span></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6b7280"><span>Арт. [АРТИКУЛ]</span><span style="color: #15803d; font-weight: 600">В наличии</span></div>
+<a href="#" style="color: #111827; font-weight: 600; font-size: 15px; line-height: 1.4; min-height: 63px">[ТОВАР ИЗ ТДТ — со скидкой]</a>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 24px; font-weight: 800">[ЦЕНА]</span><s style="font-size: 15px; color: #6b7280">[СТАРАЯ ЦЕНА]</s></div>
+<div style="display: flex; gap: 8px"><button type="button" class="btn" style="flex: 1">В корзину</button><button type="button" class="btn2">В 1 клик</button></div>
+</article><article style="background: #fff; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 210px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 14px">Фото товара
+<span style="position: absolute; left: 10px; top: 10px; background: #dbeafe; color: #1e3a8a; font-size: 12px; font-weight: 800; padding: 4px 9px; border-radius: 6px">Новинка</span>
+<span style="position: absolute; right: 8px; top: 8px; display: flex; gap: 4px"><button type="button" aria-label="В избранное" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></button><button type="button" aria-label="К сравнению" class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></button></span></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6b7280"><span>Арт. [АРТИКУЛ]</span><span style="color: #15803d; font-weight: 600">В наличии</span></div>
+<a href="#" style="color: #111827; font-weight: 600; font-size: 15px; line-height: 1.4; min-height: 63px">[ТОВАР ИЗ ТДТ — новинка]</a>
+<div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 24px; font-weight: 800">[ЦЕНА]</span><s style="font-size: 15px; color: #6b7280"></s></div>
+<div style="display: flex; gap: 8px"><button type="button" class="btn" style="flex: 1">В корзину</button><button type="button" class="btn2">В 1 клик</button></div>
+</article></div>
+</section>
+
+<section class="wrap" style="padding-top: 16px; padding-bottom: 16px">
+  <div style="background: #fff7d6; border: 1px solid #f5dc7a; border-radius: 20px; padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+    <div style="display: flex; flex-direction: column; gap: 6px"><b style="font-size: 22px">Акции и промокоды</b><span style="color: #4b5563; line-height: 1.5">[ТЕКСТ АКЦИИ — задаётся в админке] · промокод вводится в корзине</span></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px">
+      <a href="#" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; border-radius: 12px; background: #dc2626; color: #fff; font-weight: 700">Акционный товар</a>
+      <a href="#" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; border-radius: 12px; background: #111827; color: #fff; font-weight: 700">Все акции</a>
+    </div>
+  </div>
+</section>
+
+<section id="podbor" class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+  <div style="background: #fff; border-radius: 20px; padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 28px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 12px"><h2 class="h2" style="line-height: 1.15">Не знаете, что выбрать?</h2><p style="margin: 0; color: #4b5563; font-size: 17px; line-height: 1.6">Напишите марку автомобиля, бюджет и что хотите от звука. Консультант соберёт 2–3 варианта комплекта и перезвонит.</p></div>
+    <form onsubmit="return false" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Автомобиль<input type="text" placeholder="Например, Kia Rio 2019" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label><label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Бюджет<input type="text" placeholder="до 50 000 ₽" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label><label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Имя<input type="text" placeholder="Как к вам обращаться" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label><label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Телефон<input type="tel" placeholder="+7 (___) ___-__-__" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+      <button type="submit" class="btn" style="grid-column: 1 / -1; height: 52px; border-radius: 12px; font-size: 16px">Получить подбор</button>
+    </form>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+  <div style="background: #111827; color: #fff; border-radius: 20px; padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; justify-content: space-between">
+      <div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px">
+        <span style="color: #ffd23f; font-weight: 800; font-size: 13px; letter-spacing: 2px">УСТАНОВОЧНЫЙ ЦЕНТР</span>
+        <h2 class="h2">Купили у нас — установим у нас</h2>
+        <span style="color: #d1d5db; line-height: 1.6">Устанавливаем звук, электронику и свет, делаем шумоизоляцию и химчистку. У каждой услуги — своя страница с подробностями.</span>
+      </div>
+      <button type="button" data-open style="height: 52px; padding: 0 24px; border: 0; border-radius: 12px; background: #ffd23f; color: #111827; font: inherit; font-weight: 800; cursor: pointer">Записаться на установку</button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 12px"><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Установка акустики</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Профессиональная установка динамиков, усилителей и процессоров</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Корпуса под сабвуферы</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Индивидуальные корпуса под ваш динамик и багажник</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Автомагнитолы Android и CarPlay</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Установка современных головных устройств с рамкой и адаптерами</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Шумоизоляция</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Полная или частичная — тишина как в капсуле</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Химчистка салона</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Профессиональная чистка сидений, потолка и салона</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Контурная подсветка салона</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Атмосферный свет в салоне</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Мультируль в любое авто</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Добавьте функционала и стиля</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Камеры и круговой обзор 360°</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Камеры заднего вида и системы кругового обзора</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a><a href="#" style="background: #1f2937; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; color: #fff"><b style="font-size: 17px; line-height: 1.3">Видеорегистраторы</b><span style="color: #d1d5db; font-size: 14px; line-height: 1.45">Установка со скрытым монтажом проводов</span><span style="margin-top: auto; padding-top: 6px; color: #ffd23f; font-size: 14px; font-weight: 700">Подробнее →</span></a></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top: 32px; padding-bottom: 32px">
+  <div style="background: #fff; border-radius: 20px; padding: clamp(24px, 4vw, 44px)">
+    <h2 class="h2" style="margin-bottom: 24px">Как купить</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 24px"><div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #eef2fb; color: #1d4ed8; display: grid; place-items: center; font-weight: 800; font-size: 18px">1</span><b style="font-size: 17px">Выберите товар</b><span style="color: #4b5563; font-size: 15px; line-height: 1.5">фильтры по размеру, мощности, бренду и цене</span></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #eef2fb; color: #1d4ed8; display: grid; place-items: center; font-weight: 800; font-size: 18px">2</span><b style="font-size: 17px">Оформите заказ</b><span style="color: #4b5563; font-size: 15px; line-height: 1.5">в корзине или «в 1 клик» по телефону</span></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #eef2fb; color: #1d4ed8; display: grid; place-items: center; font-weight: 800; font-size: 18px">3</span><b style="font-size: 17px">Подтверждение</b><span style="color: #4b5563; font-size: 15px; line-height: 1.5">менеджер перезвонит и уточнит детали</span></div><div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 44px; height: 44px; border-radius: 50%; background: #eef2fb; color: #1d4ed8; display: grid; place-items: center; font-weight: 800; font-size: 18px">4</span><b style="font-size: 17px">Получение и оплата</b><span style="color: #4b5563; font-size: 15px; line-height: 1.5">самовывоз в салоне или доставка СДЭК по России</span></div></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top: 32px; padding-bottom: 64px">
+  <div style="display: flex; flex-direction: column; gap: 14px; max-width: 880px">
+    <h2 style="margin: 0; font-size: 26px; font-weight: 800">Салон автозвука «АудиоМаг» в Сургуте</h2>
+    <p style="margin: 0; color: #4b5563; line-height: 1.7">Розничная продажа автозвука и автоэлектроники: головные устройства 1DIN и 2DIN, компонентная и коаксиальная акустика, сабвуферы, усилители, процессоры, шумо- и виброизоляция, автосвет, камеры и парктроники. Помогаем подобрать комплект под автомобиль и бюджет, устанавливаем в собственном установочном центре. Доставляем по Сургуту и по всей России.</p>
+  </div>
+</section>
+
+<footer style="background: #111827; color: #d1d5db">
+  <div class="wrap" style="padding-top: 48px; padding-bottom: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 28px; line-height: 1.9; font-size: 15px">
+    <div style="display: flex; flex-direction: column; gap: 10px"><img src="logo-dark.svg" alt="АудиоМаг — салон автозвука" style="height: 72px; width: auto; display: block; align-self: flex-start"><span>Салон автозвука в Сургуте</span></div>
+    <div style="display: flex; flex-direction: column"><b style="color: #fff">Покупателям</b><a href="#" style="color: #d1d5db">Доставка и оплата</a><a href="#" style="color: #d1d5db">Гарантия и возврат</a><a href="#" style="color: #d1d5db">Акции и промокоды</a><a href="#" style="color: #d1d5db">Услуги и запись</a></div>
+    <div style="display: flex; flex-direction: column"><b style="color: #fff">Каталог</b><a href="#" style="color: #d1d5db">Магнитолы</a><a href="#" style="color: #d1d5db">Акустика</a><a href="#" style="color: #d1d5db">Сабвуферы и усилители</a><a href="#" style="color: #d1d5db">Шумоизоляция</a></div>
+    <div style="display: flex; flex-direction: column"><b style="color: #fff">Контакты</b><a href="tel:+73462211408" style="color: #fff">+7 (3462) 21-14-08</a><a href="tel:+73462701705" style="color: #fff">+7 (3462) 70-17-05</a><a href="mailto:audiomag86@mail.ru" style="color: #d1d5db">audiomag86@mail.ru</a><span>наб. Ивана Кайдалова, 28</span><span>Вт–Сб 10–20, Вс 11–18</span></div>
+  </div>
+  <div style="border-top: 1px solid #1f2937">
+    <div class="wrap" style="padding-top: 18px; padding-bottom: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: #9ca3af">
+      <span>© 2026 АудиоМаг · Сургут · <a href="#" style="color: #9ca3af">Политика конфиденциальности</a></span>
+      <span>Разработка сайта — <a href="https://t.me/asikpro13" style="color: #93c5fd">Vadim Mazurek</a></span>
+    </div>
+  </div>
+</footer>
+
+<div id="modal" role="presentation">
+  <div role="dialog" aria-modal="true" aria-labelledby="zapisTitle" style="position: relative; width: 100%; max-width: 640px; box-sizing: border-box; background: #fff; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+    <button type="button" aria-label="Закрыть" data-close style="position: absolute; right: 16px; top: 16px; width: 44px; height: 44px; border: 0; border-radius: 10px; background: #f3f5f8; color: #111827; display: grid; place-items: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="zapisTitle" style="margin: 0; font-size: 26px; font-weight: 800">Запись на установку</h2>
+    <p style="margin: 0; color: #4b5563; line-height: 1.55">Без регистрации: оставьте заявку, менеджер салона перезвонит и подтвердит время.</p>
+    <form id="zform" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Имя<input type="text" placeholder="Как к вам обращаться" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label><label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Телефон<input type="tel" placeholder="+7 (___) ___-__-__" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Услуга<select style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827; padding: 0 12px; background: #fff"><option>Выберите услугу</option><option>Установка акустики</option><option>Корпуса под сабвуферы</option><option>Автомагнитолы Android и CarPlay</option><option>Шумоизоляция</option><option>Химчистка салона</option><option>Контурная подсветка салона</option><option>Мультируль в любое авто</option><option>Камеры и круговой обзор 360°</option><option>Видеорегистраторы</option></select></label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Автомобиль<input type="text" placeholder="Марка, модель, год" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Удобная дата<input type="date" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Комментарий<input type="text" placeholder="Например, товар уже куплен у вас" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+      <button type="submit" class="btn" style="grid-column: 1 / -1; height: 52px; border-radius: 12px; font-size: 16px">Записаться</button>
+      <span id="zmsg" style="grid-column: 1 / -1; font-size: 13px; color: #6b7280">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>. Заявка придёт на почту салона.</span>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  var m = document.getElementById('modal');
+  function open() { m.classList.add('open'); }
+  function close() { m.classList.remove('open'); }
+  document.querySelectorAll('[data-open]').forEach(function (b) { b.addEventListener('click', open); });
+  m.querySelector('[data-close]').addEventListener('click', close);
+  m.addEventListener('click', function (e) { if (e.target === m) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  document.getElementById('zform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('zmsg').textContent = 'Это демо: на готовом сайте заявка уйдёт на audiomag86@mail.ru.';
+  });
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tab').forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
+      t.setAttribute('aria-selected', 'true');
+    });
+  });
+})();
+</script>
+</body>
+</html>
