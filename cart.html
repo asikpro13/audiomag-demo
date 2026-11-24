@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Корзина — АудиоМаг (демо)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f3f5f8}
+a{color:#1d4ed8;text-decoration:none}a:hover{color:#1e40af}
+input::placeholder{color:#6b7280}
+</style>
+<style>.dc-modal[hidden]{display:none}.demo-bar{background:#fef3c7;color:#78350f;font:13px/1.4 'Golos Text',system-ui,sans-serif;text-align:center;padding:8px 16px}</style>
+</head>
+<body>
+<div class="demo-bar">Демо-версия для согласования дизайна. Товары, цены и тексты в [скобках] — заглушки.</div>
+
+
+<div style="font-family: 'Golos Text', system-ui, sans-serif; color: #111827; background: #f3f5f8; min-height: 100vh">
+
+  <!-- top bar -->
+  <div style="background: #0b1120; border-bottom: 1px solid #1f2937; font-size: 14px; color: #9ca3af">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 10px 32px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+        <span>Сургут, наб. Ивана Кайдалова, 28</span>
+        <span>Вт–Сб 10:00–20:00 · Вс 11:00–18:00 · Пн выходной</span>
+      </div>
+      <nav aria-label="Информация" style="display: flex; flex-wrap: wrap; gap: 8px 20px">
+        <a href="#" style="color: #d1d5db">Доставка и оплата</a>
+        <a href="#" style="color: #d1d5db">Гарантия</a>
+        <a href="#" style="color: #d1d5db">Услуги</a>
+        <button type="button" style="border: 0; background: none; padding: 0; font: inherit; color: #ffee00; font-weight: 600; cursor: pointer">Запись на установку</button>
+        <a href="#" style="color: #d1d5db">О салоне</a>
+        <a href="#" style="color: #d1d5db">Контакты</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header style="background: #111827; border-bottom: 1px solid #1f2937">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center">
+      <a href="index.html" aria-label="АудиоМаг — на главную" style="display: flex; align-items: center">
+        <img src="logo.svg" alt="АудиоМаг — салон автозвука" style="height: 64px; width: auto; display: block">
+      </a>
+      <button type="button" style="height: 50px; padding: 0 20px; border: 0; border-radius: 12px; background: #1d4ed8; color: #ffffff; font: inherit; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Каталог</button>
+      <form role="search" style="flex: 1 1 340px; display: flex; min-width: 0; border: 2px solid #1d4ed8; border-radius: 12px; overflow: hidden">
+        <label for="q" style="position: absolute; left: -9999px">Поиск по каталогу</label>
+        <input id="q" type="search" placeholder="Поиск: название, артикул или бренд" style="flex: 1; min-width: 0; height: 46px; padding: 0 16px; border: 0; font: inherit; font-size: 15px; background: #ffffff; color: #111827">
+        <button type="submit" style="padding: 0 22px; border: 0; background: #1d4ed8; color: #ffffff; font: inherit; font-weight: 700; cursor: pointer">Найти</button>
+      </form>
+      <div style="display: flex; flex-direction: column; line-height: 1.3">
+        <a href="tel:+73462211408" style="color: #ffffff; font-weight: 800; font-size: 18px">+7 (3462) 21-14-08</a>
+        <a href="#" style="font-size: 13px; color: #93c5fd">Заказать звонок</a>
+      </div>
+      <nav aria-label="Покупки" style="display: flex; gap: 18px; font-size: 13px">
+        <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #d1d5db; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg>Избранное</a>
+        <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; color: #d1d5db; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7"/></svg>Сравнить</a>
+        <a href="cart.html" style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; color: #d1d5db; min-width: 48px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 4h2l2.4 11h11l2-8H6.2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Корзина<span style="position: absolute; top: -6px; right: 2px; min-width: 20px; height: 20px; border-radius: 10px; background: #dc2626; color: #ffffff; font-size: 12px; font-weight: 700; display: grid; place-items: center">4</span></a>
+      </nav>
+    </div>
+    <nav aria-label="Разделы" style="max-width: 1280px; margin: 0 auto; padding: 0 32px 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-weight: 600; font-size: 15px">
+      <a href="#" style="display: inline-flex; align-items: center; gap: 6px; height: 32px; margin: -4px 0; padding: 0 14px; border-radius: 8px; background: #dc2626; color: #ffffff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>Акции</a>
+      
+        <a href="#" style="color: #ffffff">Магнитолы</a>
+      
+        <a href="#" style="color: #ffffff">Акустика</a>
+      
+        <a href="catalog.html" style="color: #ffffff">Сабвуферы и аксессуары</a>
+      
+        <a href="#" style="color: #ffffff">Усилители</a>
+      
+        <a href="#" style="color: #ffffff">Процессоры</a>
+      
+        <a href="#" style="color: #ffffff">Шумоизоляция</a>
+      
+        <a href="#" style="color: #ffffff">Автосвет</a>
+      
+        <a href="#" style="color: #ffffff">Камеры</a>
+      
+        <a href="#" style="color: #ffffff">Монтаж</a>
+      
+      <a href="#" style="color: #f87171">Акционный товар</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 1280px; margin: 0 auto; padding: 20px 32px 48px; display: flex; flex-direction: column; gap: 20px">
+
+    <nav aria-label="Хлебные крошки" style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 14px; color: #6b7280">
+      <a href="index.html" style="color: #6b7280">Главная</a><span aria-hidden="true">/</span>
+      <span style="color: #111827">Корзина</span>
+    </nav>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px">
+      <h1 style="margin: 0; font-size: 36px; font-weight: 800">Корзина и оформление</h1>
+      <span style="color: #6b7280; font-size: 16px">4 товара</span>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+      <!-- left column -->
+      <div style="flex: 999 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+
+        <!-- items -->
+        <section aria-label="Товары" style="background: #ffffff; border-radius: 20px; padding: 8px 24px">
+          
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid #e5e7eb">
+              <div style="flex: none; width: 96px; height: 96px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 12px">Фото</div>
+              <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+                <a href="product.html" style="color: #111827; font-weight: 600; font-size: 16px; line-height: 1.35">[Сабвуфер корпусной 12″ — из ТДТ]</a>
+                <span style="font-size: 13px; color: #6b7280">Арт. [АРТИКУЛ] · <span style="color: #15803d; font-weight: 600">В наличии</span></span>
+                <span style="align-self: flex-start; margin-top: 2px; background: #fef2f2; color: #b91c1c; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 6px">Акционный товар</span>
+              </div>
+              <div role="group" aria-label="Количество" style="display: flex; align-items: center; height: 44px; border: 1px solid #d1d5db; border-radius: 10px; overflow: hidden">
+                <button type="button" aria-label="Меньше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">−</button>
+                <span style="min-width: 32px; text-align: center; font-weight: 700">1</span>
+                <button type="button" aria-label="Больше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">+</button>
+              </div>
+              <div style="min-width: 120px; text-align: right; display: flex; flex-direction: column">
+                <b style="font-size: 18px">[ЦЕНА] ₽</b>
+                <span style="font-size: 13px; color: #6b7280">за шт.</span>
+              </div>
+              <button type="button" aria-label="Удалить из корзины" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: #f3f5f8; color: #6b7280; display: grid; place-items: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button>
+            </div>
+          
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid #e5e7eb">
+              <div style="flex: none; width: 96px; height: 96px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 12px">Фото</div>
+              <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+                <a href="product.html" style="color: #111827; font-weight: 600; font-size: 16px; line-height: 1.35">[Комплект проводов для усилителя — из ТДТ]</a>
+                <span style="font-size: 13px; color: #6b7280">Арт. [АРТИКУЛ] · <span style="color: #15803d; font-weight: 600">В наличии</span></span>
+                
+              </div>
+              <div role="group" aria-label="Количество" style="display: flex; align-items: center; height: 44px; border: 1px solid #d1d5db; border-radius: 10px; overflow: hidden">
+                <button type="button" aria-label="Меньше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">−</button>
+                <span style="min-width: 32px; text-align: center; font-weight: 700">2</span>
+                <button type="button" aria-label="Больше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">+</button>
+              </div>
+              <div style="min-width: 120px; text-align: right; display: flex; flex-direction: column">
+                <b style="font-size: 18px">[ЦЕНА] ₽</b>
+                <span style="font-size: 13px; color: #6b7280">за шт.</span>
+              </div>
+              <button type="button" aria-label="Удалить из корзины" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: #f3f5f8; color: #6b7280; display: grid; place-items: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button>
+            </div>
+          
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid transparent">
+              <div style="flex: none; width: 96px; height: 96px; border-radius: 12px; background: #f3f5f8; display: grid; place-items: center; color: #6b7280; font-size: 12px">Фото</div>
+              <div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+                <a href="product.html" style="color: #111827; font-weight: 600; font-size: 16px; line-height: 1.35">[Усилитель моноблок — из ТДТ]</a>
+                <span style="font-size: 13px; color: #6b7280">Арт. [АРТИКУЛ] · <span style="color: #15803d; font-weight: 600">В наличии</span></span>
+                
+              </div>
+              <div role="group" aria-label="Количество" style="display: flex; align-items: center; height: 44px; border: 1px solid #d1d5db; border-radius: 10px; overflow: hidden">
+                <button type="button" aria-label="Меньше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">−</button>
+                <span style="min-width: 32px; text-align: center; font-weight: 700">1</span>
+                <button type="button" aria-label="Больше" style="width: 40px; height: 100%; border: 0; background: #ffffff; color: #111827; font: inherit; font-size: 20px; cursor: pointer">+</button>
+              </div>
+              <div style="min-width: 120px; text-align: right; display: flex; flex-direction: column">
+                <b style="font-size: 18px">[ЦЕНА] ₽</b>
+                <span style="font-size: 13px; color: #6b7280">за шт.</span>
+              </div>
+              <button type="button" aria-label="Удалить из корзины" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: #f3f5f8; color: #6b7280; display: grid; place-items: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button>
+            </div>
+          
+        </section>
+
+        <!-- contacts -->
+        <section style="background: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 800">1. Контактные данные</h2>
+          <p style="margin: 0; color: #4b5563; font-size: 15px">Без регистрации. Менеджер перезвонит и подтвердит заказ.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Имя *<input type="text" placeholder="Как к вам обращаться" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Телефон *<input type="tel" placeholder="+7 (___) ___-__-__" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+            <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">E-mail<input type="email" placeholder="для письма с заказом" style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827"></label>
+          </div>
+        </section>
+
+        <!-- delivery -->
+        <section style="background: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 800">2. Способ получения</h2>
+          <div role="radiogroup" aria-label="Способ получения" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px">
+            
+              <button type="button" role="radio" aria-checked="true" style="text-align: left; padding: 16px; border-radius: 14px; border: 2px solid #1d4ed8; background: #eef2fb; font: inherit; color: #111827; cursor: pointer; display: flex; flex-direction: column; gap: 4px">
+                <b style="font-size: 16px">Самовывоз из салона</b>
+                <span style="font-size: 14px; color: #4b5563; line-height: 1.4">наб. Ивана Кайдалова, 28</span>
+                <span style="font-size: 14px; font-weight: 700; color: #111827; margin-top: 4px">Бесплатно</span>
+              </button>
+            
+              <button type="button" role="radio" aria-checked="false" style="text-align: left; padding: 16px; border-radius: 14px; border: 2px solid #e5e7eb; background: #ffffff; font: inherit; color: #111827; cursor: pointer; display: flex; flex-direction: column; gap: 4px">
+                <b style="font-size: 16px">СДЭК — пункт выдачи</b>
+                <span style="font-size: 14px; color: #4b5563; line-height: 1.4">по всей России, выбор на карте</span>
+                <span style="font-size: 14px; font-weight: 700; color: #111827; margin-top: 4px">от [N] ₽, считается автоматически</span>
+              </button>
+            
+              <button type="button" role="radio" aria-checked="false" style="text-align: left; padding: 16px; border-radius: 14px; border: 2px solid #e5e7eb; background: #ffffff; font: inherit; color: #111827; cursor: pointer; display: flex; flex-direction: column; gap: 4px">
+                <b style="font-size: 16px">СДЭК — курьер</b>
+                <span style="font-size: 14px; color: #4b5563; line-height: 1.4">до двери по всей России</span>
+                <span style="font-size: 14px; font-weight: 700; color: #111827; margin-top: 4px">от [N] ₽, считается автоматически</span>
+              </button>
+            
+          </div>
+
+          
+            <div style="background: #f3f5f8; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; font-size: 15px">
+              <b>Салон «АудиоМаг», наб. Ивана Кайдалова, 28</b>
+              <span style="color: #4b5563">Вт–Сб 10:00–20:00 · Вс 11:00–18:00 · Пн выходной. Товар в наличии — забрать можно в день заказа.</span>
+            </div>
+          
+
+          
+
+          
+        </section>
+
+        <!-- payment + comment -->
+        <section style="background: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <h2 style="margin: 0; font-size: 22px; font-weight: 800">3. Оплата и комментарий</h2>
+          <div style="display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 14px; background: #f3f5f8">
+            <span style="flex: none; width: 36px; height: 36px; border-radius: 10px; background: #ffffff; color: #1d4ed8; display: grid; place-items: center; font-weight: 800">₽</span>
+            <div style="display: flex; flex-direction: column; gap: 2px; font-size: 15px">
+              <b>Оплата в салоне при получении</b>
+              <span style="color: #4b5563">Наличными, картой или по QR-коду, когда забираете товар. Онлайн-оплаты на сайте нет.</span>
+            </div>
+          </div>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: #4b5563">Комментарий к заказу<textarea rows="3" placeholder="Например: нужна установка, удобное время звонка" style="padding: 12px 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827; resize: vertical"></textarea></label>
+          <label style="display: flex; align-items: center; gap: 10px; font-size: 15px; min-height: 44px"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #1d4ed8">Нужна установка в нашем центре — менеджер предложит время</label>
+        </section>
+      </div>
+
+      <!-- summary -->
+      <aside aria-label="Итог заказа" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="background: #ffffff; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 20px; font-weight: 800">Ваш заказ</h2>
+          <form style="display: flex; gap: 8px">
+            <label for="promo" style="position: absolute; left: -9999px">Промокод</label>
+            <input id="promo" type="text" placeholder="Промокод" style="flex: 1; min-width: 0; height: 46px; padding: 0 14px; border-radius: 10px; border: 1px solid #d1d5db; font: inherit; font-size: 15px; color: #111827; text-transform: uppercase">
+            <button type="submit" style="height: 46px; padding: 0 16px; border: 0; border-radius: 10px; background: #111827; color: #ffffff; font: inherit; font-weight: 700; cursor: pointer">Применить</button>
+          </form>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 6px; border-top: 1px solid #e5e7eb; font-size: 15px">
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding-top: 10px"><span style="color: #4b5563">Товары (4 шт.)</span><span>[СУММА] ₽</span></div>
+            <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4b5563">Скидка по акциям</span><span style="color: #b91c1c">−[СУММА] ₽</span></div>
+            
+            <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4b5563">Доставка</span><span>Бесплатно</span></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px; border-top: 1px solid #e5e7eb">
+            <b style="font-size: 18px">Итого</b><b style="font-size: 28px">[ИТОГО] ₽</b>
+          </div>
+          <button type="button" data-open="done" style="height: 56px; border: 0; border-radius: 12px; background: #1d4ed8; color: #ffffff; font: inherit; font-weight: 800; font-size: 17px; cursor: pointer">Оформить заказ</button>
+          <span style="font-size: 13px; color: #6b7280; line-height: 1.5">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>. Заказ придёт менеджеру, он перезвонит для подтверждения.</span>
+        </div>
+        <div style="background: #111827; color: #ffffff; border-radius: 20px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+          <b>Нужна помощь с заказом?</b>
+          <a href="tel:+73462211408" style="color: #ffee00; font-weight: 800; font-size: 18px">+7 (3462) 21-14-08</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- thank you -->
+  <div class="dc-modal" data-modal="done" hidden>
+  <div style="position: fixed; inset: 0; z-index: 50; background: rgba(17,24,39,0.6); display: grid; place-items: center; padding: 20px">
+    <div role="dialog" aria-modal="true" aria-labelledby="doneTitle" style="width: 100%; max-width: 520px; box-sizing: border-box; background: #ffffff; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center">
+      <span style="width: 64px; height: 64px; border-radius: 50%; background: #dcfce7; color: #15803d; display: grid; place-items: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg></span>
+      <h2 id="doneTitle" style="margin: 0; font-size: 26px; font-weight: 800">Заказ № [НОМЕР] оформлен</h2>
+      <p style="margin: 0; color: #4b5563; line-height: 1.6">Спасибо! Менеджер перезвонит в рабочее время, подтвердит наличие и детали получения. Копия заказа отправлена на почту, если вы её указали.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+        <a href="index.html" style="height: 48px; padding: 0 22px; display: inline-flex; align-items: center; border-radius: 12px; background: #1d4ed8; color: #ffffff; font-weight: 700">На главную</a>
+        <button type="button" data-close style="height: 48px; padding: 0 22px; border: 1px solid #d1d5db; border-radius: 12px; background: #ffffff; color: #111827; font: inherit; font-weight: 700; cursor: pointer">Закрыть</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <footer style="background: #111827; color: #d1d5db">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 48px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 28px; line-height: 1.9; font-size: 15px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <img src="logo.svg" alt="АудиоМаг — салон автозвука" style="height: 72px; width: auto; display: block; align-self: flex-start">
+        <span>Салон автозвука в Сургуте</span>
+      </div>
+      <div style="display: flex; flex-direction: column"><b style="color: #ffffff">Покупателям</b><a href="#" style="color: #d1d5db">Доставка и оплата</a><a href="#" style="color: #d1d5db">Гарантия и возврат</a><a href="#" style="color: #d1d5db">Акции и промокоды</a><a href="#" style="color: #d1d5db">Услуги и запись</a></div>
+      <div style="display: flex; flex-direction: column"><b style="color: #ffffff">Каталог</b><a href="#" style="color: #d1d5db">Магнитолы</a><a href="#" style="color: #d1d5db">Акустика</a><a href="catalog.html" style="color: #d1d5db">Сабвуферы и аксессуары</a><a href="#" style="color: #d1d5db">Усилители</a><a href="#" style="color: #d1d5db">Шумоизоляция</a></div>
+      <div style="display: flex; flex-direction: column"><b style="color: #ffffff">Контакты</b><a href="tel:+73462211408" style="color: #ffffff">+7 (3462) 21-14-08</a><a href="tel:+73462701705" style="color: #ffffff">+7 (3462) 70-17-05</a><a href="mailto:audiomag86@mail.ru" style="color: #d1d5db">audiomag86@mail.ru</a><span>наб. Ивана Кайдалова, 28</span><span>Вт–Сб 10–20, Вс 11–18</span></div>
+    </div>
+    <div style="border-top: 1px solid #1f2937">
+      <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: #9ca3af">
+        <span>© 2026 АудиоМаг · Сургут · <a href="#" style="color: #9ca3af">Политика конфиденциальности</a></span>
+        <span>Разработка сайта — <a href="https://t.me/asikpro13" style="color: #93c5fd">Vadim Mazurek</a></span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('click', function (e) {
+  var o = e.target.closest('[data-open]');
+  if (o) { e.preventDefault(); var m = document.querySelector('.dc-modal[data-modal="' + o.getAttribute('data-open') + '"]'); if (m) m.hidden = false; return; }
+  var c = e.target.closest('[data-close]');
+  if (c) { var mm = c.closest('.dc-modal'); if (mm) mm.hidden = true; }
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.querySelectorAll('.dc-modal').forEach(function (m) { m.hidden = true; }); });
+document.querySelectorAll('form').forEach(function (f) { f.addEventListener('submit', function (e) { e.preventDefault(); }); });
+</script>
+</body>
+</html>
